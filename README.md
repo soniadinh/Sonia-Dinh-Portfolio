@@ -6,7 +6,7 @@ This is a page for mult-128-a3-porfolio-webpage
 
 <div align="center">
 <a href="https://github.com/soniadinh/Sonia-Dinh-Portfolio/tree/main/assets" target="blank">
-<img src=".assets/Excited.png" width="90" alt="Logo" />
+<img src="assets/Excited.png" width="90" alt="Logo" />
 </a>
 
 <h2> Project Name : Readme Template </h2>
