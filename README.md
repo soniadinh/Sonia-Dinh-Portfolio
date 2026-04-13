@@ -2,17 +2,11 @@
 This is a page for mult-128-a3-porfolio-webpage
 
 
-<div align= "center">
 
-⭐ **If you like this project, please star the repository!** ⭐ <br>
-------- 👇 **Template Demo Below** 👇 --------
-
-<hr>
-</div>
 
 <div align="center">
-<a href="https://github.com/Sumonta056/FixHub-Issue-Tracker-Website" target="blank">
-<img src="./assets/chatBot.png" width="90" alt="Logo" />
+<a href="https://github.com/soniadinh/Sonia-Dinh-Portfolio/tree/main/assets" target="blank">
+<img src=".assets/Excited.png" width="90" alt="Logo" />
 </a>
 
 <h2> Project Name : Readme Template </h2>
