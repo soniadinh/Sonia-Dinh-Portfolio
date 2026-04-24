@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sonia-portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container-main">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="avatar">
+                <i> <img src="assets/avatar/sonia.png" alt="sonia"></i>
+            </div>
+            <h1 class="header-title">Hi, I am Sonia</h1>
+            <p class="header-subtitle">When I say I am taking Interactive Design and Technology Program</p>
+        </div>
+
+        <!-- Comparison Section -->
+        <div class="comparison-section">
+            <!-- Column Headers -->
+            <div class="comparison-header">
+                <div class="column-label left">People think...</div>
+                <div></div>
+                <div class="column-label right">What actually...</div>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="comparison-row">
+                <div class="comparison-box left">
+                    <p class="comparison-text">Design is only about aesthetics</p>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="check1" class="hidden-checkbox">
+                    <label for="check1" class="custom-checkbox" onclick="toggleCheck(1)">
+                        <i class="bi bi-check-lg"></i>
+                    </label>
+                </div>
+                <div class="comparison-box right" id="right1">
+                    <p class="comparison-text">Design is functional, not just aesthetic</p>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="comparison-row">
+                <div class="comparison-box left">
+                    <p class="comparison-text">Add every possible feature to maximize user choice</p>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="check2" class="hidden-checkbox">
+                    <label for="check2" class="custom-checkbox" onclick="toggleCheck(2)">
+                        <i class="bi bi-check-lg"></i>
+                    </label>
+                </div>
+                <div class="comparison-box right" id="right2">
+                    <p class="comparison-text">Require critical thinking, make logical design</p>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="comparison-row">
+                <div class="comparison-box left">
+                    <p class="comparison-text">It's a one-Time task</p>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="check3" class="hidden-checkbox">
+                    <label for="check3" class="custom-checkbox" onclick="toggleCheck(3)">
+                        <i class="bi bi-check-lg"></i>
+                    </label>
+                </div>
+                <div class="comparison-box right" id="right3">
+                    <p class="comparison-text">Iterative process to adapt on user behavior changes and technologies</p>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="comparison-row">
+                <div class="comparison-box left">
+                    <p class="comparison-text">It only applies for digital products</p>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="check4" class="hidden-checkbox">
+                    <label for="check4" class="custom-checkbox" onclick="toggleCheck(4)">
+                        <i class="bi bi-check-lg"></i>
+                    </label>
+                </div>
+                <div class="comparison-box right" id="right4">
+                    <p class="comparison-text">Cross-functional approach to any physical or service design, and customer
+                        experiences</p>
+                </div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="comparison-row">
+                <div class="comparison-box left">
+                    <p class="comparison-text">It's all about the user</p>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="check5" class="hidden-checkbox">
+                    <label for="check5" class="custom-checkbox" onclick="toggleCheck(5)">
+                        <i class="bi bi-check-lg"></i>
+                    </label>
+                </div>
+                <div class="comparison-box right" id="right5">
+                    <p class="comparison-text">Effective design also aligns with business goals and constraints</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <p class="bottom-question">you may be curious about what IDT is</p>
+            <div class="button-group">
+                <button class="btn-custom btn-yes" onclick="handleYes()">YES</button>
+                <button class="btn-custom btn-no" onclick="handleNo()">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleCheck(rowNumber) {
+            const checkbox = document.getElementById(`check${rowNumber}`);
+            const checkboxLabel = checkbox.nextElementSibling;
+            const rightBox = document.getElementById(`right${rowNumber}`);
+
+            // Toggle checkbox state
+            checkbox.checked = !checkbox.checked;
+
+            // Toggle visual states
+            if (checkbox.checked) {
+                checkboxLabel.classList.add('checked');
+                rightBox.classList.add('revealed');
+            } else {
+                checkboxLabel.classList.remove('checked');
+                rightBox.classList.remove('revealed');
+            }
+        }
+
+        function handleYes() { window.location.href = '1.html'; }
+
+        function handleNo() { window.location.href = '0.html'; }
+
+        // Click anywhere on the row to toggle
+        document.querySelectorAll('.comparison-row').forEach((row, index) => {
+            row.style.cursor = 'pointer';
+            row.addEventListener('click', (e) => {
+                // Only trigger if not clicking directly on the checkbox
+                if (!e.target.classList.contains('custom-checkbox') && !e.target.closest('.custom-checkbox')) {
+                    toggleCheck(index + 1);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
