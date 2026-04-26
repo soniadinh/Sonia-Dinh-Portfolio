@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e8e8e8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        /* Main Container */
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #1a1a1a;
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            position: relative;
+            min-height: 90vh;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            top: -60px;
+            left: 20px;
+            background-color: #f0f0f0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .nav-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+        }
+
+        .nav-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-icon i {
+            font-size: 1.8rem;
+            color: #1a1a1a;
+        }
+
+        /* Page Title Section */
+        .title-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .title-shape {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff6ec7 0%, #ff3da1 100%);
+            border-radius: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(255, 110, 199, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ff6ec7;
+            margin: 0;
+        }
+
+        /* Content Area */
+        .content-area {
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .content-area h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .content-area p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card-item {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: #ff6ec7;
+            box-shadow: 0 8px 24px rgba(255, 110, 199, 0.2);
+        }
+
+        .card-item h3 {
+            font-size: 1.3rem;
+            color: #ff6ec7;
+            margin-bottom: 1rem;
+        }
+
+        .card-item p {
+            font-size: 1rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Decorative Elements */
+        .decorative-dots {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #3a3a3a;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .dot:hover {
+            background-color: #ff6ec7;
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .page-container {
+                padding: 2rem 1rem;
+            }
+
+            .page-number {
+                top: -50px;
+                left: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .nav-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .nav-icon i {
+                font-size: 1.5rem;
+            }
+
+            .title-shape {
+                width: 35px;
+                height: 35px;
+            }
+
+            .page-title {
+                font-size: 1.5rem;
+            }
+
+            .content-area h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-area p {
+                font-size: 1rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Page Number -->
+        <div class="page-number">9</div>
+
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html" class="nav-icon" title="Home">
+                <i class="bi bi-house-door"></i>
+            </a>
+            <a href="contact.html" class="nav-icon" title="Contact">
+                <i class="bi bi-envelope"></i>
+            </a>
+        </div>
+
+        <!-- Page Title with Shape -->
+        <div class="title-section">
+            <div class="title-shape"></div>
+            <h1 class="page-title">inspirations</h1>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <h2>Design Inspirations & Resources</h2>
+            <p>
+                Welcome to my inspirations page! Here you'll find a curated collection of design resources, 
+                creative references, and materials that inspire my work. This space showcases the influences 
+                that shape my design thinking and creative process.
+            </p>
+            <p>
+                From innovative design systems to groundbreaking user experiences, these resources represent 
+                the cutting edge of design and technology. Each element here has contributed to my growth as 
+                a designer and continues to inform my approach to creating meaningful digital experiences.
+            </p>
+
+            <!-- Card Grid -->
+            <div class="card-grid">
+                <div class="card-item">
+                    <h3>Design Systems</h3>
+                    <p>
+                        Comprehensive design systems that demonstrate best practices in component libraries, 
+                        design tokens, and scalable design patterns.
+                    </p>
+                </div>
+
+                <div class="card-item">
+                    <h3>UI/UX Patterns</h3>
+                    <p>
+                        Innovative user interface patterns and interaction designs that solve complex problems 
+                        with elegant, user-centered solutions.
+                    </p>
+                </div>
+
+                <div class="card-item">
+                    <h3>Creative Studios</h3>
+                    <p>
+                        Leading design studios and agencies whose work pushes boundaries and sets new standards 
+                        for digital creativity and innovation.
+                    </p>
+                </div>
+
+                <div class="card-item">
+                    <h3>Typography</h3>
+                    <p>
+                        Beautiful typography examples and font pairings that demonstrate the power of type in 
+                        creating compelling visual hierarchies.
+                    </p>
+                </div>
+
+                <div class="card-item">
+                    <h3>Color Theory</h3>
+                    <p>
+                        Inspiring color palettes and combinations that evoke emotion, create mood, and enhance 
+                        the overall aesthetic of design work.
+                    </p>
+                </div>
+
+                <div class="card-item">
+                    <h3>Motion Design</h3>
+                    <p>
+                        Exceptional examples of motion graphics and animation that bring interfaces to life and 
+                        enhance user engagement through movement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Decorative Dots -->
+            <div class="decorative-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.card-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#333333';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#2a2a2a';
+            });
+        });
+    </script>
+</body>
+</html>

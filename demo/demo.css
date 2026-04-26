@@ -1,0 +1,235 @@
+ .container-main {
+     max-width: 1200px;
+     height: 100%;
+     margin: 0 auto;
+     background-color: black;
+     padding: 3rem 2rem;
+     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Header Section */
+ .header-section {
+     text-align: center;
+     margin-bottom: 3rem;
+ }
+
+ .avatar {
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+     margin: 0 auto 1.5rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .header-title {
+     font-size: 1.8rem;
+     font-weight: 500;
+     color: white;
+     margin-bottom: 0.5rem;
+ }
+
+ .header-subtitle {
+     font-size: 1rem;
+     color: #b0b0b0;
+     line-height: 1.6;
+ }
+
+ /* Comparison Section */
+
+ .comparison-header {
+     display: grid;
+     grid-template-columns: 1fr 60px 1fr;
+     gap: 1rem;
+     margin-bottom: 1rem;
+     align-items: center;
+ }
+
+
+ .column-label.left {
+     color: blue;
+     text-align: right;
+     padding-right: 1rem;
+ }
+
+ .column-label.right {
+     color: #88FF00;
+     text-align: left;
+     padding-left: 1rem;
+ }
+
+ /* Comparison Row */
+ .comparison-row {
+     display: grid;
+     grid-template-columns: 1fr 30px 1fr;
+     gap: 1rem;
+     margin-bottom: 1.5rem;
+ }
+
+ .comparison-box {
+     background-color: transparent;
+     padding: 1.2rem;
+     border-radius: 8px;
+     border: 2px solid transparent;
+     transition: all 0.3s ease;
+     min-height: 80px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .comparison-box.left {
+     border-color: blue;
+ }
+
+ .comparison-box.right {
+     border-color: #88FF00;
+     opacity: 0;
+     transform: translateX(20px);
+     transition: all 0.5s ease;
+ }
+
+ .comparison-box.right.revealed {
+     opacity: 1;
+     transform: translateX(0);
+ }
+
+ .comparison-text {
+     font-size: 0.95rem;
+     color: #e0e0e0;
+     line-height: 1.5;
+     text-align: center;
+ }
+
+ /* Checkbox Styling */
+ .checkbox-wrapper {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .custom-checkbox {
+     width: 32px;
+     height: 32px;
+     border: 2px solid #555;
+     border-radius: 6px;
+     background-color: black;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.3s ease;
+ }
+
+ .custom-checkbox:hover {
+     border-color: #888;
+     background-color: #333;
+ }
+
+ .custom-checkbox.checked {
+     background-color: #88FF00;
+ }
+
+ .custom-checkbox i {
+     color: black;
+     font-size: 1.2rem;
+     opacity: 0;
+     transition: opacity 0.3s ease;
+ }
+
+ .custom-checkbox.checked i {
+     opacity: 1;
+ }
+
+ .hidden-checkbox {
+     display: none;
+ }
+
+ /* Bottom Section */
+ .bottom-section {
+     text-align: center;
+     margin-top: 4rem;
+ }
+
+ .bottom-question {
+     font-size: 1rem;
+     color:#ff3da1;
+     margin-bottom: 1.5rem;
+ }
+
+ .button-group {
+     display: flex;
+     gap: 1rem;
+     justify-content: center;
+ }
+
+ .btn-custom {
+     padding: 0.8rem 3rem;
+     font-size: 1rem;
+     font-weight: 600;
+     border-radius: 8px;
+     border: none;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .btn-yes {
+     font-weight: 200;
+     background-color:#ff3da1;
+     color: white;
+ }
+
+ .btn-yes:hover {
+     background-color: #d1018f;
+     transform: translateY(-2px);
+     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+ }
+
+ .btn-no {
+     font-weight: 200;
+     background-color: #2a2a2a;
+     color: white;
+     border: 2px solid #555;
+ }
+
+ .btn-no:hover {
+     background-color: #171717;
+     border-color: #888;
+ }
+
+ /* Responsive */
+ @media (max-width: 576px) {
+     .container-main {
+         padding: 2rem 1rem;
+     }
+
+     .comparison-header,
+     .comparison-row {
+         grid-template-columns: 1fr 50px 1fr;
+         gap: 0.5rem;
+     }
+
+     .comparison-box {
+         padding: 1rem;
+         min-height: 70px;
+     }
+
+     .comparison-text {
+         font-size: 0.85rem;
+     }
+
+     .column-label {
+         font-size: 0.8rem;
+     }
+
+     .custom-checkbox {
+         width: 28px;
+         height: 28px;
+     }
+
+     .btn-custom {
+         padding: 0.7rem 2rem;
+         font-size: 0.9rem;
+     }
+ }

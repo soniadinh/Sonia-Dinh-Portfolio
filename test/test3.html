@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Interactive Triangle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Triangle */
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 350px solid #b0ff00;
+            position: relative;
+            cursor: pointer;
+            filter: drop-shadow(0 0 40px rgba(176, 255, 0, 0.6));
+            transition: all 0.3s ease;
+        }
+
+        .triangle:hover {
+            filter: drop-shadow(0 0 60px rgba(176, 255, 0, 0.8));
+            transform: scale(1.05);
+        }
+
+        .triangle-text {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        /* Rectangle Buttons Container */
+        .rectangles-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            transform: translateY(-20px);
+        }
+
+        .rectangles-container.visible {
+            opacity: 1;
+            max-height: 500px;
+            transform: translateY(0);
+        }
+
+        /* Rectangle Buttons */
+        .rectangle-button {
+            background: linear-gradient(135deg, #b0ff00 0%, #90dd00 100%);
+            padding: 2rem 4rem;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: center;
+            min-width: 400px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(176, 255, 0, 0.3);
+            text-decoration: none;
+            display: block;
+        }
+
+        .rectangle-button:hover {
+            background: linear-gradient(135deg, #c0ff20 0%, #a0ed10 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(176, 255, 0, 0.5);
+        }
+
+        .rectangle-button:active {
+            transform: translateY(-2px);
+        }
+
+        /* Click Instruction */
+        .instruction {
+            color: #b0ff00;
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .triangle {
+                border-left: 150px solid transparent;
+                border-right: 150px solid transparent;
+                border-bottom: 260px solid #b0ff00;
+            }
+
+            .triangle-text {
+                font-size: 1.5rem;
+                bottom: 90px;
+            }
+
+            .rectangle-button {
+                min-width: 300px;
+                padding: 1.5rem 3rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .triangle {
+                border-left: 100px solid transparent;
+                border-right: 100px solid transparent;
+                border-bottom: 180px solid #b0ff00;
+            }
+
+            .triangle-text {
+                font-size: 1.2rem;
+                bottom: 60px;
+            }
+
+            .rectangle-button {
+                min-width: 250px;
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="triangle" id="triangle" onclick="toggleRectangles()">
+            <span class="triangle-text">Portfolio</span>
+        </div>
+
+        <div class="rectangles-container" id="rectanglesContainer">
+            <a href="kiddo-brandguide.html" class="rectangle-button" onclick="handleClick(event, 'Kiddo brandguide')">
+                Kiddo brandguide
+            </a>
+            <a href="infographic.html" class="rectangle-button" onclick="handleClick(event, 'Infographic')">
+                Infographic
+            </a>
+        </div>
+
+        <p class="instruction" id="instruction">Click the triangle to reveal options</p>
+    </div>
+
+    <script>
+        // Track visibility state
+let rectanglesVisible = false;
+
+/**
+ * Toggle the visibility of rectangle buttons
+ */
+function toggleRectangles() {
+    const container = document.getElementById('rectanglesContainer');
+    const instruction = document.getElementById('instruction');
+    
+    rectanglesVisible = !rectanglesVisible;
+    
+    if (rectanglesVisible) {
+        container.classList.add('visible');
+        instruction.textContent = 'Click the triangle to hide options';
+    } else {
+        container.classList.remove('visible');
+        instruction.textContent = 'Click the triangle to reveal options';
+    }
+}
+
+/**
+ * Handle click on rectangle buttons
+ * @param {Event} event - The click event
+ * @param {string} buttonName - Name of the button clicked
+ */
+function handleClick(event, buttonName) {
+    // For demo purposes, prevent navigation and show alert
+    event.preventDefault();
+    alert(`Navigating to: ${buttonName}\n\nIn a real implementation, this would take you to the ${buttonName} page.`);
+    
+    // If you want actual navigation, remove the event.preventDefault() and alert above
+}
+
+/**
+ * Initialize the page
+ */
+function init() {
+    console.log('Portfolio page initialized');
+    
+    // Optional: Add keyboard support
+    document.addEventListener('keydown', function(event) {
+        // Toggle with spacebar or Enter key when focused on triangle
+        if (event.key === ' ' || event.key === 'Enter') {
+            const triangle = document.getElementById('triangle');
+            if (document.activeElement === triangle || document.activeElement === document.body) {
+                event.preventDefault();
+                toggleRectangles();
+            }
+        }
+    });
+}
+
+// Run initialization when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
