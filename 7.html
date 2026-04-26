@@ -30,17 +30,33 @@
             </ul>
         </div>
 
+        <!-- Page Title with Shape -->
+        <div class="title-section">
+            <a href="demo.html">
+                <i> <img src="assets/avatar/sonia.png" alt="sonia"></i>
+            </a>
+            <div class="title-shape shape-contact"></div>
+            <h1 class="page-title page-title-contact">contact</h1>
+        </div>
+
         <!-- Top Navigation -->
-        
+
         <!-- Header Section -->
         <div class="header-section">
-            <div class="avatar">
-                <a href="0.html">
-                <i> <img src="assets/avatar/sonia.png" alt="sonia"></i>
+            <h1 class="header-title">Thanks for exploring my site</h1>
+
+            <!-- Social Links -->
+            <div>
+                <a href="https://www.linkedin.com/in/xuan-dinh/" target="blank" class="sm-icon" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a href="https://medium.com/@xdinh2015" target="blank" class="sm-icon" title="Medium">
+                    <i class="bi bi-medium"></i>
                 </a>
             </div>
-            <h1 class="header-title">Hi, I am Sonia</h1>
-            <p class="header-subtitle">Thanks for visiting my website, hit me an email for more information</p>
+            <p class="header-subtitle">If something spark your interest, or would you like to discuss a potential
+                collaboration, check out my Linkedin and Medium above, or shoot me an email.</p>
         </div>
 
         <!-- Contact Form -->
@@ -71,33 +87,28 @@
             </div>
         </form>
 
-        <!-- Footer -->
-        <div class="footer">
-            <a href="https://linkedin.com" target="https://www.linkedin.com/in/xuan-dinh/" class="linkedin-icon" title="LinkedIn">
-                <i class="bi bi-linkedin"></i>
-            </a>
-        </div>
+
     </div>
 
     <!-- Preview Overlay -->
     <div class="preview-overlay" id="previewOverlay">
 
-            <!-- Preview Section -->
-            <div class="preview-section">
-                <label class="preview-label">Preview message</label>
-                <div class="preview-box" id="previewBox">
-                    <p class="preview-name" id="previewName"></p>
-                    <p class="preview-email" id="previewEmail"></p>
-                    <p class="preview-comment" id="previewComment"></p>
-                </div>
-
-                <div class="btn-container">
-                    <button type="button" class="btn-custom btn-edit" onclick="hidePreview()">Edit</button>
-                    <button type="button" class="btn-custom btn-send" onclick="sendMessage()">Send</button>
-                </div>
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <label class="preview-label">Preview message</label>
+            <div class="preview-box" id="previewBox">
+                <p class="preview-name" id="previewName"></p>
+                <p class="preview-email" id="previewEmail"></p>
+                <p class="preview-comment" id="previewComment"></p>
             </div>
 
+            <div class="btn-container">
+                <button type="button" class="btn-custom btn-edit" onclick="hidePreview()">Edit</button>
+                <button type="button" class="btn-custom btn-send" onclick="sendMessage()">Send</button>
+            </div>
         </div>
+
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
