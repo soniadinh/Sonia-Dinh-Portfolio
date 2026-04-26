@@ -14,7 +14,7 @@ This is my personal website, showcasing my projects, while highlighting what ins
 
 ## ✨ Website structure 🐞
 <div align="left">
-✅ Demo: Short introduce and what I am studying. Create interaction with visitor and options to explore the site.</div>
+✅ index: Short introduce and what I am studying. Create interaction with visitor and options to explore the site.</div>
 <div align="left">
 ✅ Inspirations: About Human senses, Design fundamentals and related technology innovations. </div>
 <div align="left">
